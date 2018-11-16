@@ -1,0 +1,19 @@
+---
+GET:
+  "/user/<username>":
+    is_json: true
+    plugin_path: "."
+    executable: python2.7
+    command: test.py --full %(username)s
+PUT:
+  "/user/<username>":
+    is_json: true
+    plugin_path: "."
+    executable: python2.7
+    command: test.py -u %(username)s %(http_payload)s
+POST:
+  "/user/<username>":
+    is_json: true
+    plugin_path: "."
+    executable: python2.7
+    command: test.py -c %(username)s --email %(http_payload__email)s
