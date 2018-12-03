@@ -111,11 +111,9 @@ def route_handler(path, method, config):
         payload = normalize_url_args(**payload)
         print('Got payload: %s', payload, file=sys.stderr)
         command_parts = [p % payload for p in config['command'].split()]
-        config['command'] = ' '.join(command_parts)
-        print('Executing: %s', config['command'], file=sys.stderr)
-        output = execute(
-            config['executable'], config['command'], config['plugin_path']
-        )
+        command = ' '.join(command_parts)
+        print('Executing: %s', command, file=sys.stderr)
+        output = execute(config['executable'], command, config['plugin_path'])
         print('Got output: %s', output, file=sys.stderr)
         content = format_output(output, config.get('is_json', False))
         status = format_status(output)
