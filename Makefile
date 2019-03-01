@@ -1,5 +1,5 @@
 IMAGE_NAME := techstreets/rest2cmd
-IMAGE_TAG := 0.0.3
+IMAGE_TAG := 0.0.4
 CONTAINER_NAME := rest2cmd_app
 ENV_FILE_NAME := rest2cmd_app_env
 HOST_PORT := 8000
