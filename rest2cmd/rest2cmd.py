@@ -104,6 +104,16 @@ def normalize_url_args(**url_args):
 def route_handler(path, method, config):
 
     def _call(**url_args):
+        x_groups = request.headers.get('X-GROUPS', '').split(',')
+        groups = config.get('groups', None)
+        if groups is not None:
+            intersection = set(x_groups) & set(groups)
+            if len(intersection) == 0:
+                return jsonify({
+                    'message': (
+                        'You don\'t have permission to access this resource.'
+                    )
+                }), 403
         data = request.json or {}
         payload = {**url_args, 'http_payload': json.dumps(data)}
         for k, v in (data if isinstance(data, dict) else {}).items():
