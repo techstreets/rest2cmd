@@ -31,7 +31,7 @@ setup(
     install_requires=[
         'flask==1.0.2',
         'gunicorn==19.9.0',
-        'pyyaml==3.13'
+        'pyyaml==5.1b3'
     ],
     classifiers=[
         'Environment :: Web Environment',
