@@ -31,4 +31,4 @@ VOLUME ${APP_ROOT}
 
 EXPOSE 8000
 
-CMD /usr/local/bin/gunicorn -w 4 -b 0.0.0.0:8000 rest2cmd:app
+CMD /usr/local/bin/gunicorn --config gunicorn.conf rest2cmd:app
