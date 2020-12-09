@@ -7,7 +7,7 @@ RUN yum install -y which net-tools curl wget vim git
 RUN yum install -y python36
 
 # install pip
-RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python36 -
+RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python3.6 -
 RUN pip3 install --upgrade pip
 
 # ENV GUNICORN_VERSION 19.9.0
