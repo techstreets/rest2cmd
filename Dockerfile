@@ -5,6 +5,7 @@ MAINTAINER bradojevic@gmail.com
 RUN yum install -y epel-release
 RUN yum install -y which net-tools curl wget vim git
 RUN yum install -y python36
+RUN ln -s /usr/bin/python3.6 /usr/bin/python36
 
 # install pip
 RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python3.6 -
